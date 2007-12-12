@@ -4,7 +4,7 @@ Version:	4.5.4
 Release:	%mkrel 4
 License:	GPL
 Group:		Games/Arcade
-BuildRequires:	XFree86-devel
+BuildRequires:	X11-devel
 
 URL:		http://www.xpilot.org
 Source0:	ftp://ftp.xpilot.org/pub/xpilot/xpilot-%version.tar.bz2
