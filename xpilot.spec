@@ -16,7 +16,6 @@ Patch0:		%{name}-4.5.3-config.patch.bz2
 
 BuildRequires:  xorg-x11
 
-BuildRoot:	%{_tmppath}/%{name}-root
 
 %description
 Xpilot is an X Window System based multiplayer game of aerial combat.
