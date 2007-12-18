@@ -14,7 +14,7 @@ Source3:	%{name}-32.png
 Source4:	%{name}-48.png
 Patch0:		%{name}-4.5.3-config.patch.bz2
 
-BuildRequires:  xorg-x11
+BuildRequires:  xorg-x11 imake
 
 
 %description
