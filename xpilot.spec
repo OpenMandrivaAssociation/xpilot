@@ -94,5 +94,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_miconsdir}/*
 %{_liconsdir}/*
 %{_iconsdir}/%{name}.png
-%_prefix/X11R6/lib/X11/doc/html/*
 
