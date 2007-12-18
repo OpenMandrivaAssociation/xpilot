@@ -53,25 +53,26 @@ mkdir -p $RPM_BUILD_ROOT%{_mandir}/man{1,6}
 # scheesh. cvs files.
 find doc -name '.cvs*' | xargs rm -f {} \;
 
-(cd $RPM_BUILD_ROOT
-mkdir -p ./%{_menudir}
-cat > ./%{_menudir}/%{name} <<EOF
-?package(%{name}):\
-	needs="text"\
-	section="Amusement/Arcade"\
-	title="Xpilot server"\
-	longtitle="Fly/shoot arcade game"\
-	command="%{_gamesbindir}/xpilots"\
-	icon="%{name}.png"
-?package(%{name}):\
-  	needs="%{name}"\
-	section="Amusement/Arcade"\
-	title="Xpilot - Requires server"\
-	longtitle="Fly/shoot arcade game"\
-	command="%{_gamesbindir}/xpilot -join"\
-	icon="%{name}.png"
+mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications/
+cat << EOF > %buildroot%{_datadir}/applications/mandriva-%{name}-server.desktop
+[Desktop Entry]
+Type=Application
+Categories=Game;ArcadeGame;
+Name=Xpilot server
+Comment=Fly/shoot arcade game
+Exec=%{_gamesbindir}/xpilots
+Icon=%{name}
 EOF
-)
+
+cat << EOF > %buildroot%{_datadir}/applications/mandriva-%{name}.desktop
+[Desktop Entry]
+Type=Application
+Categories=Game;ArcadeGame;
+Name=Xpilot - Requires server
+Comment=Fly/shoot arcade game
+Exec=%{_gamesbindir}/xpilot -join
+Icon=%{name}
+EOF
 
 %post
 %{update_menus}
@@ -89,7 +90,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_gamesbindir}/*
 %{_libdir}/xpilot
 %{_mandir}/man?/*
-%{_menudir}/*
+%{_datadir}/applications/mandriva-*.desktop
 %{_miconsdir}/*
 %{_liconsdir}/*
 %{_iconsdir}/%{name}.png
