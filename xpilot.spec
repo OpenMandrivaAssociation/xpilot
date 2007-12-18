@@ -88,7 +88,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc README.txt LICENSE README.txt.msub 
 %doc doc
 %{_gamesbindir}/*
-%{_libdir}/xpilot
+/usr/lib/xpilot
 %{_mandir}/man?/*
 %{_datadir}/applications/mandriva-*.desktop
 %{_miconsdir}/*
