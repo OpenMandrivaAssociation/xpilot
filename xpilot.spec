@@ -1,7 +1,7 @@
 Summary:	An X Window System based multiplayer aerial combat game
 Name:		xpilot
 Version:	4.5.4
-Release:	%mkrel 7
+Release:	%mkrel 8
 License:	GPL
 Group:		Games/Arcade
 BuildRequires:	X11-devel
