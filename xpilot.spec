@@ -1,20 +1,19 @@
 Summary:	An X Window System based multiplayer aerial combat game
 Name:		xpilot
 Version:	4.5.4
-Release:	%mkrel 8
+Release:	%mkrel 9
 License:	GPL
 Group:		Games/Arcade
-BuildRequires:	X11-devel
-
 URL:		http://www.xpilot.org
 Source0:	ftp://ftp.xpilot.org/pub/xpilot/xpilot-%version.tar.bz2
 # Source1:	%{name}-menu
 Source2:	%{name}-16.png
 Source3:	%{name}-32.png
 Source4:	%{name}-48.png
-Patch0:		%{name}-4.5.3-config.patch.bz2
-
-BuildRequires:  xorg-x11 imake
+Patch0:		%{name}-4.5.3-config.patch
+BuildRequires:	libx11-devel
+BuildRequires:	libxext-devel
+BuildRequires:  imake
 
 BuildRoot:	%{_tmppath}/%{name}-root
 
@@ -32,14 +31,13 @@ the server on one machine, and then set up xpilot clients on all of the
 players' machines.
 
 %prep
-
 %setup -q
 %patch0 -p0 
 
 %build
 xmkmf
 %make Makefiles
-%make CDEBUGFLAGS="$RPM_OPT_FLAGS"
+%make CDEBUGFLAGS="%optflags" EXTRA_LDOPTIONS="%ldflags"
 
 %install
 rm -rf $RPM_BUILD_ROOT
