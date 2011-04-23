@@ -1,11 +1,11 @@
 Summary:	An X Window System based multiplayer aerial combat game
 Name:		xpilot
-Version:	4.5.4
-Release:	%mkrel 9
+Version:	4.5.5
+Release:	%mkrel 1
 License:	GPL
 Group:		Games/Arcade
 URL:		http://www.xpilot.org
-Source0:	ftp://ftp.xpilot.org/pub/xpilot/xpilot-%version.tar.bz2
+Source0:	http://downloads.sourceforge.net/xpilotgame/xpilot-%version.tar.bz2
 # Source1:	%{name}-menu
 Source2:	%{name}-16.png
 Source3:	%{name}-32.png
