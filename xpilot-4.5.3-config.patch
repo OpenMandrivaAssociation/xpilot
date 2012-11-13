@@ -1,0 +1,38 @@
+--- Local.config.old	2002-06-03 16:09:13.000000000 -0400
++++ Local.config	2002-06-03 16:14:06.000000000 -0400
+@@ -36,11 +36,11 @@
+ #define	LocalGuru xpilot@xpilot.org	/* The one to contact for problems */
+ #endif /* LocalGuru */
+ 
+-PREFIX = /usr/local
++PREFIX = /usr
+ 
+ /* Manual pages for games usually go to section 6. */
+ MANSUFFIX = 6
+-INSTMANDIR = $(PREFIX)/man/man$(MANSUFFIX)
++INSTMANDIR = $(PREFIX)/share/man/man$(MANSUFFIX)
+ INSTLIBDIR = $(PREFIX)/lib/xpilot
+ INSTBINDIR = $(PREFIX)/bin
+ 
+@@ -48,9 +48,9 @@
+ /* #define Silent	/* Makes the server real silent */
+ /* #define ServerSound	/* Turns on sound support in the server (not client) */
+ 
+-/* #define DoublebufferExtension	/* support for X Doublebuffer Extension */
+-/* #define MultibufferExtension 	/* support for X Multibuffer Extension */
+-/* #define Joystick	/* Joystick support for Linux, needs joystick 0.7 */
++#define DoublebufferExtension	/* support for X Doublebuffer Extension */
++#define MultibufferExtension 	/* support for X Multibuffer Extension */
++#define Joystick	/* Joystick support for Linux, needs joystick 0.7 */
+ 
+ 
+ /*
+@@ -105,7 +105,7 @@
+  * Try not defining anything first.  You probably want -O for speed.
+  */
+ /* CDEBUGFLAGS = -g				/* General debug flag */
+-CDEBUGFLAGS = -O				/* General optimize flag */
++CDEBUGFLAGS = $(RPM_OPT_FLAGS)				/* General optimize flag */
+ /* CDEBUGFLAGS = -Ae +O3 +FPD			/* HP cc optimize flags (no +ESlit) */
+ /* CDEBUGFLAGS = -Ae -g -z +w1			/* HP cc debug flags */
+ /* CDEBUGFLAGS = -g2 -O2			/* SGI debug */
