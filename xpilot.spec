@@ -1,7 +1,7 @@
 Summary:	An X Window System based multiplayer aerial combat game
 Name:		xpilot
 Version:	4.5.5
-Release:	%mkrel 1
+Release:	2
 License:	GPL
 Group:		Games/Arcade
 URL:		http://www.xpilot.org
@@ -15,7 +15,6 @@ BuildRequires:	pkgconfig(x11)
 BuildRequires:	pkgconfig(xext)
 BuildRequires:  imake
 
-BuildRoot:	%{_tmppath}/%{name}-root
 
 %description
 Xpilot is an X Window System based multiplayer game of aerial combat.
