@@ -11,8 +11,8 @@ Source2:	%{name}-16.png
 Source3:	%{name}-32.png
 Source4:	%{name}-48.png
 Patch0:		%{name}-4.5.3-config.patch
-BuildRequires:	libx11-devel
-BuildRequires:	libxext-devel
+BuildRequires:	pkgconfig(x11)
+BuildRequires:	pkgconfig(xext)
 BuildRequires:  imake
 
 BuildRoot:	%{_tmppath}/%{name}-root
