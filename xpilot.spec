@@ -4,7 +4,7 @@ Version:	4.5.5
 Release:	3
 License:	GPL
 Group:		Games/Arcade
-URL:		http://www.xpilot.org
+URL:		https://www.xpilot.org
 Source0:	http://downloads.sourceforge.net/xpilotgame/xpilot-%version.tar.bz2
 # Source1:	%{name}-menu
 Source2:	%{name}-16.png
